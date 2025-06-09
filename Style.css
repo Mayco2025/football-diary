@@ -1,0 +1,208 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #ffffff;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Back to Home Button with Icon */
+.back-to-home {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(45deg, #dc143c, #8b0000);
+  color: white;
+  padding: 12px 20px 12px 45px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  background-image: url('assets/icons/home-icon.svg');
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 15px center;
+}
+
+.back-to-home:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
+  background: linear-gradient(45deg, #ff1744, #dc143c);
+}
+
+/* Legends Section */
+.legends-header {
+  text-align: center;
+  padding: 100px 20px 60px;
+  background: linear-gradient(135deg, #0a0a0a, #2d2d2d);
+  margin: -20px -20px 40px -20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.legends-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('assets/images/manuttd.jpg') center/cover;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.legends-content {
+  position: relative;
+  z-index: 1;
+}
+
+.legends-title {
+  font-size: 4rem;
+  color: #ffd700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+}
+
+.legends-subtitle {
+  font-size: 1.3rem;
+  color: #e0e0e0;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* Player Cards */
+.players-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.player-card {
+  background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 2px solid #444;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.player-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #dc143c, #ffd700, #dc143c);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.player-card:hover::before {
+  transform: scaleX(1);
+}
+
+.player-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(220, 20, 60, 0.2);
+  border-color: #dc143c;
+}
+
+.player-card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+.player-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  text-align: justify;
+}
+
+.player-card strong {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.player-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.player-card:hover .player-img {
+  transform: scale(1.05);
+}
+
+figure {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+figcaption {
+  margin-top: 15px;
+  font-style: italic;
+  color: #ffd700;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 0 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .legends-title {
+    font-size: 2.5rem;
+  }
+  .legends-subtitle {
+    font-size: 1.1rem;
+  }
+  .player-card h1 {
+    font-size: 1.5rem;
+  }
+  .player-img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .legends-title {
+    font-size: 2rem;
+  }
+  .legends-subtitle {
+    font-size: 1rem;
+  }
+  .player-card h1 {
+    font-size: 1.3rem;
+  }
+  .player-img {
+    height: 180px;
+  }
+}
